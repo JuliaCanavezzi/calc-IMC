@@ -6,3 +6,7 @@
   align-items: center;
   justify-content: center;
 }
+.form-imc{
+  gap: 20px;
+  margin-top: 20px;
+}

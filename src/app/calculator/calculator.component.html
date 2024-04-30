@@ -1,14 +1,23 @@
 <div class="container">
+
+  <h1 class="text-center">Calculadora de IMC</h1>
+  <form class="d-flex flex-column align-items-center form-imc" [formGroup]="imcFormGroup">
   <div class="input-group mb-3">
-    <input type="text" class="form-control" placeholder="Insira seu peso" aria-label="Insira seu peso" aria-describedby="basic-addon2">
+
+    <input type="text" class="form-control" placeholder="Insira seu peso" aria-label="Insira seu peso" aria-describedby="basic-addon2" formControlName="peso">
     <span class="input-group-text" id="basic-addon2">kg</span>
   </div>
   <div class="input-group mb-3">
-    <input type="text" class="form-control" placeholder="Insira sua altura" aria-label="Insira sua altura" aria-describedby="basic-addon2">
+    <input type="text" class="form-control" placeholder="Insira sua altura" aria-label="Insira sua altura" aria-describedby="basic-addon2" formControlName="altura">
     <span class="input-group-text" id="basic-addon2">m</span>
   </div>
-  <div>
-    <button class="btn-primary btn">Calcular IMC</button>
+  <div *ngIf="resultado">
+    <p>Seu IMC é: {{ resultado }}</p>
+    <p>Pelo calculo do IMC, você está com {{ analiseImc }}</p>
   </div>
+  <div>
+    <button class="btn-primary btn" (click)="calc()">Calcular IMC</button>
+  </div>
+  </form>
 </div>
 
